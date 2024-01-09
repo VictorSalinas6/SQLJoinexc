@@ -41,6 +41,13 @@ WHERE reviews.productId = 857 and reviews.rating = 1;
 /*ORDER BY reviews.Rating
 LIMIT 1;*/
 
+Select p.Name AS 'Product Name', r.Reviewer, MIN(r.Rating) as 'Lowest_Ranger', r.Comment as 'Reviewer_Comment'
+from products as p
+inner join reviews as r
+on p.ProductID = r.ProductID
+WHERE p.Name like 'Visio%' and r.rating = 1
+group by r.ReviewID;
+
 -- ------------------------------------------ Extra - May be difficult
 /* Your goal is to write a query that serves as an employee sales report.
 This query should return:
