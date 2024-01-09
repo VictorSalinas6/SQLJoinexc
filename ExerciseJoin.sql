@@ -27,9 +27,10 @@ WHERE categories.CategoryID IN (2,8);
  for Eagles: Hotel California --You may need to use SUM() */
  -- product id is 97
 
-SELECT products.Name, SUM(sales.Quantity) AS 'Sold', products.Price FROM products
+SELECT products.Name, SUM(sales.Quantity) AS 'Sold', SUM(sales.Quantity * sales.PricePerUnit) AS 'Total Price' FROM products
 INNER JOIN sales ON products.ProductID = sales.ProductID
-WHERE products.ProductID = 97;
+WHERE products.ProductID = 97
+Group BY products.ProductID;
 
 /* joins: find Product name, reviewer name, rating, and comment on the Visio TV. (only return for the lowest rating!) */
 -- product id 857
