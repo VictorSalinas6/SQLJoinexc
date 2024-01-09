@@ -37,9 +37,9 @@ Group BY products.ProductID;
 
 SELECT products.Name AS 'Product', reviews.Reviewer AS 'Name', reviews.Rating, reviews.Comment FROM reviews
 INNER JOIN products ON reviews.ProductID = products.ProductID
-WHERE reviews.productId = 857
-ORDER BY reviews.Rating
-LIMIT 1;
+WHERE reviews.productId = 857 and reviews.rating = 1;        
+/*ORDER BY reviews.Rating
+LIMIT 1;*/
 
 -- ------------------------------------------ Extra - May be difficult
 /* Your goal is to write a query that serves as an employee sales report.
