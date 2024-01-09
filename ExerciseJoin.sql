@@ -11,9 +11,11 @@ INNER JOIN reviews ON products.ProductID = reviews.ProductID
 WHERE reviews.Rating = 5;
  
 /* joins: find the employee with the most total quantity sold.  use the sum() function and group by */
-SELECT FirstName, LastName, (SUM(sales.Quantity)) AS "Sales" FROM employees
+SELECT FirstName, LastName, (SUM(sales.Quantity)) AS Sales FROM employees
 INNER JOIN sales ON employees.EmployeeID = sales.EmployeeID
-GROUP BY employees.EmployeeID;
+GROUP BY employees.EmployeeID
+ORDER BY Sales DESC
+LIMIT 1;
 
 /* joins: find the name of the department, and the name of the category for Appliances and Games */
 
